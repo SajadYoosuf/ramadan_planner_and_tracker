@@ -5,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 class CurrentLocation {
   Position? currentPosition;
   String? currentAdress;
+  Placemark? place;
 
   Future<bool> _handleLocationPermission(BuildContext context) async {
     bool serviceEnabled;
@@ -35,26 +36,34 @@ class CurrentLocation {
     return true;
   }
 
-  Future<Position?> getCurrentPosition(BuildContext context) async {
+  Future<String> getCurrentPosition(BuildContext context) async {
     final hasPermission = await _handleLocationPermission(context);
 
     await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
         .then((Position position) {
       currentPosition = position;
-      return currentPosition;
+      print(currentPosition!.latitude);
+      print(currentPosition!.longitude);
+      // ignore: unrelated_type_equality_checks
+      return currentAdress !=
+          getAddressFromLatLng(
+              currentPosition!.latitude, currentPosition!.longitude);
     }).catchError((e) {
       debugPrint(e);
     });
-    return currentPosition;
+    return currentAdress!;
   }
 
-  Future<void> getAddressFromLatLng(double latitude, double longitude) async {
+  Future<String> getAddressFromLatLng(double latitude, double longitude) async {
     await placemarkFromCoordinates(latitude, longitude)
         .then((List<Placemark> placemarks) {
-      Placemark place = placemarks[0];
-      currentAdress = place.subLocality;
+      print("object");
+      return currentAdress = place!.subLocality;
     }).catchError((e) {
       debugPrint(e);
     });
+    print(currentAdress);
+    currentAdress = place!.street.toString();
+    return currentAdress!;
   }
 }

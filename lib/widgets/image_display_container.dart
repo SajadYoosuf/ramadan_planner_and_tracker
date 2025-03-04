@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:ramadan_planner/view/task_details.dart';
 
 InkWell imageDisplayContainer(
-    BuildContext context, String image, String title) {
+    BuildContext context, String image, String title, int index) {
   return InkWell(
-      onTap: () => false,
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => TaskDetails(
+                    title: title,
+                    image: image,
+                    index: index,
+                  ))),
       child: Container(
         width: 70,
         height: 60,
