@@ -5,9 +5,17 @@ Container prayerTimeDisplaying(
   return Container(
     width: 50,
     height: 40,
-    color: Colors.white,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(22), color: Colors.white),
     child: Column(
-      children: [Text(prayerName), Text(prayerTime ?? '')],
+      children: [
+        Text(
+          prayerName,
+          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+        ),
+        Text(prayerTime!,
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold))
+      ],
     ),
   );
 }
