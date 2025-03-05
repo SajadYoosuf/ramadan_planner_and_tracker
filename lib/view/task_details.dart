@@ -25,15 +25,12 @@ class TaskDetails extends StatelessWidget {
               icon: Icon(
                 Icons.arrow_back,
               )),
-          title: Text("Today $title Task"),
+          title: Text("Today Task"),
         ),
         body: Column(
           children: [
-            if (index == 0)
-              niskaramTask(context, title!)
-            else if (index == 1)
-              dikrTaskContainer(context)
-            else if (index == 2)
+              niskaramTask(context ),
+              dikrTaskContainer(context),
               quranTask(context),
           ],
         ));

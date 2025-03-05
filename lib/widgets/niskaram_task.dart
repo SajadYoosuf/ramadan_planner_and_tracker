@@ -5,7 +5,7 @@ import 'package:ramadan_planner/utilities/images.dart';
 import 'package:ramadan_planner/view%20model/get_prayer_time.dart';
 import 'package:ramadan_planner/view%20model/task_add.dart';
 
-Widget niskaramTask(BuildContext context, String title) {
+Widget niskaramTask(BuildContext context) {
   return Consumer<TaskAdd>(
     builder: (context, task, child) {
       task.prayerTaskbool[0] = task.prayerTaskDetails[0].fajirCompleted;

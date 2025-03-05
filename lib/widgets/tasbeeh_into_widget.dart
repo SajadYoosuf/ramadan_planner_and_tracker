@@ -14,16 +14,16 @@ Container tasbeehIntroWidget(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
-          height: 10,
+          height: 40,
         ),
         Align(
             alignment: Alignment.center,
             child: Text(
-              "Start Your Day To Count\n            Tasbeeh",
+              "Start Your Daily Task ",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             )),
         SizedBox(
-          height: 10,
+          height: 20,
         ),
         InkWell(
           child: Container(
