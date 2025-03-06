@@ -1,22 +1,16 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
 import 'package:ramadan_planner/model/prayer_times.dart';
-import 'package:ramadan_planner/services/muslim_salat_times.dart';
 import 'package:ramadan_planner/utilities/constant.dart';
-import 'package:ramadan_planner/view%20model/current_location.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GetPrayerTime extends ChangeNotifier {
-  // HomeStatus _homestatus = HomeStatus.loading;
-  // HomeStatus get homeStatus => _homestatus;
+
   int currentIndex = 1;
-  int indexForprayertimes = now.day;
-  // bool apiOnceCalledADay = true;
   List<PrayerTime> prayerTimes = [
     PrayerTime(
         day: 2,
@@ -252,17 +246,7 @@ class GetPrayerTime extends ChangeNotifier {
         isha: "07:45 PM"),
   ];
   Future<void> getCurrentPrayerTimes() async {
-    // for (int i = 0; i < prayerTimes.length; i++) {
-    //   if (now.day == prayerTimes[i].day) {
-    //     print("check current day");
 
-    //     print(now.day);
-    //     print("check current day");
-    //     print('$indexForprayertimes-1 day');
-    //     break;
-    //   }
-    //   notifyListeners();
-    // }
   }
 
   void changePrayerTimeIndex(int index) {

@@ -22,17 +22,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Future<PrayerTime>? future;
-  @override
-  void initState() {
-    // WidgetsBinding.instance.addPostFrameCallback((_) async {
-    // final prayerTime = Provider.of<GetPrayerTime>(context, listen: false);
-
-    // future = prayerTime.getCurrentPrayerTimes(context);
-    // });
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 10,
               ),
               homeIntroContainer(
-                  context, home.prayerTimes[home.indexForprayertimes]),
+                  context, home.prayerTimes[now.day-1]),
               SizedBox(
                 height: 10,
               ),
@@ -71,12 +60,12 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
-              // tasbeehIntroWidget(context),
+              tasbeehIntroWidget(context),
               SizedBox(
-                height: 30,
+                height: 10,
               ),
               todayPrayerTimes(
-                  context, home.prayerTimes[home.indexForprayertimes]),
+                  context, home.prayerTimes[now.day-1]),
             ]))));
   }
 }

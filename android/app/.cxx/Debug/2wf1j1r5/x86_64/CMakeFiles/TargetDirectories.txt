@@ -1,0 +1,2 @@
+E:/flutter/flutter/ramadan_planner_and_tracker/android/app/.cxx/Debug/2wf1j1r5/x86_64/CMakeFiles/edit_cache.dir
+E:/flutter/flutter/ramadan_planner_and_tracker/android/app/.cxx/Debug/2wf1j1r5/x86_64/CMakeFiles/rebuild_cache.dir
