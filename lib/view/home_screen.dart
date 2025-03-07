@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:ramadan_planner/model/prayer_times.dart';
 import 'package:ramadan_planner/utilities/constant.dart';
 import 'package:ramadan_planner/utilities/images.dart';
-import 'package:ramadan_planner/view%20model/get_prayer_time.dart';
 import 'package:ramadan_planner/widgets/prayer_times.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,8 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<GetPrayerTime>(
-      builder: (context, home, child) => Scaffold(
+    return  Scaffold(
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.height,
@@ -133,7 +130,6 @@ class _HomeScreenState extends State<HomeScreen> {
                    ) ],
                 ),
              ] ) ) ])),
-      ),
-    );
+      );
   }
 }

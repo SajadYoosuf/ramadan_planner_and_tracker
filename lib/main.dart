@@ -5,11 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:ramadan_planner/model/prayer_times.dart';
-import 'package:ramadan_planner/view%20model/get_prayer_time.dart';
-import 'package:ramadan_planner/view%20model/navigation.dart';
-import 'package:ramadan_planner/view%20model/task_add.dart';
-import 'package:ramadan_planner/view/navigation_screens.dart';
+import 'package:ramadan_planner/view/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,14 +14,7 @@ void main() async {
   // Hive.registerAdapter(TodayWeatherAdapter());
   // Hive.registerAdapter(ItemAdapter());
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider<Navigation>(create: (_) => Navigation()),
-    ChangeNotifierProvider<GetPrayerTime>(
-      create: (_) => GetPrayerTime()..getCurrentPrayerTimes(),
-    ),
-    ChangeNotifierProvider<TaskAdd>(
-        create: (_) => TaskAdd()..valueintialization())
-  ], child: MainApp()));
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -36,6 +25,6 @@ class MainApp extends StatelessWidget {
     // final provider = Provider.of<HomeFunctions>(context);
     // provider.getCurrentPrayerTimes(context);
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: NavigationScreens());
+        debugShowCheckedModeBanner: false, home: HomeScreen());
   }
 }
