@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ramadan_planner/view%20model/navigation.dart';
-import 'package:ramadan_planner/widgets/navigation_column.dart';
 
 class NavigationScreens extends StatelessWidget {
   const NavigationScreens({super.key});
@@ -18,10 +17,10 @@ class NavigationScreens extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            navigationColumn(context, 0, 'Home',Icons.home),
-            navigationColumn(context, 1, 'Monitor',Icons.leaderboard),
-           navigationColumn(context, 2, 'Schedule',Icons.schedule),
-           navigationColumn(context, 3, 'Settings',Icons.settings)
+          //   navigationColumn(context, 0, 'Home',Icons.home),
+          //   navigationColumn(context, 1, 'Monitor',Icons.leaderboard),
+          //  navigationColumn(context, 2, 'Schedule',Icons.schedule),
+          //  navigationColumn(context, 3, 'Settings',Icons.settings)
           
           ],
         ),
