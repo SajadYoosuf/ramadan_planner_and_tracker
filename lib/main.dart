@@ -25,6 +25,6 @@ class MainApp extends StatelessWidget {
     // final provider = Provider.of<HomeFunctions>(context);
     // provider.getCurrentPrayerTimes(context);
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeScreen());
+        debugShowCheckedModeBanner: false, home: LoginScreen());
   }
 }
