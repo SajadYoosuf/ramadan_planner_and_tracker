@@ -1,20 +1,20 @@
 import 'dart:io';
-
-import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:ramadan_planner/view%20model/task_view_model.dart';
 import 'package:ramadan_planner/view/home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:ramadan_planner/view/login_screen.dart';
+import 'package:ramadan_planner/view/task_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Hive.initFlutter();
-  // Hive.registerAdapter(PrayerTimeAdapter());
-  // Hive.registerAdapter(TodayWeatherAdapter());
-  // Hive.registerAdapter(ItemAdapter());
-
-  runApp(MainApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<TaskViewmodel>(
+          create: (context) => TaskViewmodel()),
+    ],
+    child: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -22,9 +22,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<HomeFunctions>(context);
-    // provider.getCurrentPrayerTimes(context);
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: LoginScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: TaskPage());
   }
 }
