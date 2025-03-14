@@ -5,6 +5,7 @@ import 'package:ramadan_planner/utilities/constant.dart';
 import 'package:ramadan_planner/utilities/images.dart';
 import 'package:ramadan_planner/view/task_page.dart';
 import 'package:ramadan_planner/widgets/navigation_column.dart';
+import 'package:ramadan_planner/widgets/navigation_widget.dart';
 import 'package:ramadan_planner/widgets/prayer_times.dart';
 import 'package:ramadan_planner/widgets/task_progress.dart';
 
@@ -148,20 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ]),
               Positioned(
                 bottom: 0,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.10,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      navigationColumn(context, Icons.home, 'Home', 0),
-                      navigationColumn(
-                          context, Icons.leaderboard, 'LeaderBoard', 0),
-                      navigationColumn(context, Icons.schedule, 'Schedule', 0),
-                      navigationColumn(context, Icons.person, 'Profile', 0)
-                    ],
-                  ),
-                ),
+                child:navigationWidget(context) 
               )
             ],
           )),

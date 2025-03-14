@@ -15,7 +15,7 @@ SizedBox prayerTaskRow(BuildContext context, String prayerName, String time) {
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15), color: Colors.grey),
+                borderRadius: BorderRadius.circular(15), color: Colors.white),
             child: Center(
               child: Icon(
                 Icons.timer_sharp,
@@ -36,7 +36,7 @@ SizedBox prayerTaskRow(BuildContext context, String prayerName, String time) {
             children: [
               Text(
                 "$prayerName $time",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
               ),
             ],
           ),
@@ -44,7 +44,7 @@ SizedBox prayerTaskRow(BuildContext context, String prayerName, String time) {
         Positioned(
             left: MediaQuery.of(context).size.width * 0.85,
             top: 10,
-            child: Icon(Icons.check_box_outline_blank)),
+            child: Icon(Icons.check_box_outline_blank,color: Colors.white,)),
       ],
     ),
   );

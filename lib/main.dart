@@ -4,6 +4,7 @@ import 'package:ramadan_planner/view%20model/task_view_model.dart';
 import 'package:ramadan_planner/view/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ramadan_planner/view/login_screen.dart';
+import 'package:ramadan_planner/view/profile_page.dart';
 import 'package:ramadan_planner/view/task_page.dart';
 
 void main() async {
@@ -22,6 +23,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: TaskPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ProfilePage());
   }
 }
